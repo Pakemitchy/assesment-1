@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana</title>
+</head>
+<body>
+    <div class="profile">
+        <img src="foto diri.JPG" alt="foto profile">
+        <h2>Nama : Muhammad Syahwal Laili Wahidi</h2>
+        <p>NIM   : 6701223030</p>
+        <p>Kelas : D3SI4601</p>
+    </div>
+
+    <div class="input-group">
+        <label for="jumlah">Jumlah</label>
+        <input type="number" id="jumlah">
+    </div>
+
+    <div class="input-group">
+        <label for="buku">Buku</label>
+        <select id="buku">
+            <option value="sherlock">Sherlock</option>
+            <option value="lupin">Lupin</option>
+            <option value="aladin">Aladin</option>
+        </select>
+    </div>
+
+    <button class="button" onclick="ambilBuku()">Ambil Buku</button>
+
+    <script>
+        function ambilBuku() {
+            const jumlah = parseInt(document.getElementById('jumlah').value);
+            const bukuPilihan = document.getElementById('buku').value;
+
+            if (jumlah === 0) {
+                alert('Buku tidak boleh kosong!');
+                return;
+            }
+
+            const bukuDitemukan = buku.find(b => b.nama === bukuPilihan);
+
+            if (!bukuDitemukan) {
+                alert('Buku tidak ditemukan!');
+                return;
+            }
+
+            if (jumlah > bukuDitemukan.jumlah) {
+                alert('Jumlah buku yang dipesan tidak tersedia!');
+                return;
+            }
+
+            alert('Silahkan ambil buku anda!');
+        }
+        let buku =[
+            {"nama" : "sherlock", "jumlah" : 4},
+            {"nama" : "lupin", "jumlah" : 4},
+            {"nama" : "aladin", "jumlah" : 4}
+        ]
+    </script>
+</body>
+</html>
